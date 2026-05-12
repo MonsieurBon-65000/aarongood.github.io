@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aaron Good</title>
+  <style>
+    :root {
+      --green:      #2d5016;
+      --green-mid:  #4a7c2f;
+      --green-light:#e8f0e0;
+      --amber:      #c87941;
+      --bg:         #f8f7f3;
+      --surface:    #ffffff;
+      --text:       #1a1a1a;
+      --muted:      #5a5a5a;
+      --border:     #e0ddd5;
+      --radius:     10px;
+      --max:        780px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    a { color: var(--green-mid); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    header, main, footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Header / Bio ── */
+    header {
+      padding-top: 64px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .name {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: var(--amber);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .bio {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    .bio p + p { margin-top: 12px; }
+
+    .contact-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      font-size: 0.9rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: var(--surface);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .contact-links a:hover {
+      border-color: var(--green-mid);
+      color: var(--green-mid);
+      text-decoration: none;
+    }
+
+    /* ── Sections ── */
+    main { padding-top: 52px; }
+
+    section + section { margin-top: 52px; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+
+    .section-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+      max-width: 560px;
+    }
+
+    /* ── Cards ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      border-color: #c8c4ba;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title a {
+      color: var(--text);
+    }
+
+    .card-title a:hover {
+      color: var(--green-mid);
+      text-decoration: none;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: var(--green-light);
+      color: var(--green);
+    }
+
+    .badge.personal {
+      background: #f0ebe0;
+      color: #8a6030;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--green-mid);
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 72px;
+      padding-top: 24px;
+      padding-bottom: 40px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 520px) {
+      .name { font-size: 1.6rem; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="name">Aaron Good</div>
+    <div class="tagline">Licensed Counselor &amp; Builder</div>
+    <div class="bio">
+      <p>I'm a Licensed Professional Counselor based in Portland, Oregon, where I run
+        <a href="https://trailheadcounseling.net">Trailhead Counseling</a>.
+        I work with individuals navigating career transitions, anxiety, and life changes.</p>
+      <p>On the side, I build tools — mostly for counselors and for my own curiosity.
+        Some are useful to others; some are just fun to make.</p>
+    </div>
+    <div class="contact-links">
+      <a href="https://trailheadcounseling.net">Trailhead Counseling</a>
+      <a href="mailto:aaron@trailheadcounseling.net">Email</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section>
+      <div class="section-label">Resources</div>
+      <div class="section-title">Tools for Counselors</div>
+      <div class="section-desc">Apps, directories, and articles I've built for the counseling community.</div>
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-title">
+            <a href="https://aperfectcareer.com">A Perfect Career</a>
+            <span class="badge">Live</span>
+          </div>
+          <div class="card-desc">A directory of credentialed career counselors, built to help people
+            find qualified professionals for career transitions and job search support.</div>
+          <a class="card-link" href="https://aperfectcareer.com">aperfectcareer.com →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <a href="https://bestcetracker.com">Best CE Tracker</a>
+            <span class="badge">Live</span>
+          </div>
+          <div class="card-desc">Track continuing education hours and license renewal deadlines.
+            Upload certificates and the app parses them automatically.</div>
+          <a class="card-link" href="https://bestcetracker.com">bestcetracker.com →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <a href="tools/liability-insurance.html">Picking a Liability Insurance Provider</a>
+          </div>
+          <div class="card-desc">A comparison of CPH &amp; Associates, HPSO, and American Professional
+            Agency — the three main carriers for mental health counselors.</div>
+          <a class="card-link" href="tools/liability-insurance.html">Read article →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <a href="tools/superbills.html">How to Generate a Superbill</a>
+          </div>
+          <div class="card-desc">Step-by-step guide to creating superbills for out-of-network
+            reimbursement, with a free Word template to download.</div>
+          <a class="card-link" href="tools/superbills.html">Read article →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <a href="tools/progress-notes.html">A Simple Approach to Progress Notes</a>
+          </div>
+          <div class="card-desc">Two printable progress note templates designed for private practice —
+            a full-page version and a compact two-per-page format.</div>
+          <a class="card-link" href="tools/progress-notes.html">Read article →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <a href="tools/accepting-new-clients.html">Accepting New Clients? Say So!</a>
+          </div>
+          <div class="card-desc">The one thing many therapists forget to communicate — and how
+            clearly stating your availability can increase referrals.</div>
+          <a class="card-link" href="tools/accepting-new-clients.html">Read article →</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Portland, Oregon &nbsp;·&nbsp; <a href="https://trailheadcounseling.net">Trailhead Counseling</a>
+  </footer>
+
+</body>
+</html>
