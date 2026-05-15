@@ -5,6 +5,9 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- `tools/client-transaction-correlator.html` — unlisted download page for Client Transaction Correlator Mac app (noindexed); awaiting GitHub Release URL to be dropped in
+
 ## [1.0.0] - 2026-05-12
 
 ### Added
